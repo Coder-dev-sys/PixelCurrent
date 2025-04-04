@@ -2,20 +2,195 @@ import React, { Component } from 'react'
 import NewsItem from './NewsItem'
 
 export class News extends Component {
+  articles = [
+    {
+      "source": { "id": "espn", "name": "ESPN" },
+      "author": "Ben Baby",
+      "title": "Bengals reach extensions with Chase, Higgins - ESPN",
+      "description": "The Bengals have secured two of the NFL's most prominent wide receivers, with Ja'Marr Chase and Tee Higgins telling Fox Sports that they have agreed to contract extensions.",
+      "url": "https://www.espn.com/nfl/story/_/id/44284476/bengals-agree-extensions-jamarr-chase-tee-higgins",
+      "urlToImage": "https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2025%2F0130%2Fr1445405_2_1296x729_16%2D9.jpg",
+      "publishedAt": "2025-03-17T03:46:26Z",
+      "content": "CINCINNATI -- Two of the NFL's most prominent wide receivers will be with the Cincinnati Bengals for the foreseeable future.\r\nJa'Marr Chase and Tee Higgins told Fox Sports on Sunday that they have ag… [+4013 chars]"
+    },
+    {
+      "source": { "id": null, "name": "CBS Sports" },
+      "author": "",
+      "title": "2025 NCAA Tournament winners and losers from bracket reveal: Who got the best and worst draws? - CBS Sports",
+      "description": "A few teams will love their March Madness draw. Others? Not so much.",
+      "url": "https://www.cbssports.com/college-basketball/news/2025-ncaa-tournament-winners-and-losers-from-bracket-reveal-who-got-the-best-and-worst-draws/",
+      "urlToImage": "https://sportshub.cbsistatic.com/i/r/2024/12/13/859329fb-9f87-40de-8a79-645a8aef6a52/thumbnail/1200x675/34421cdedbb97e1c91bd87507a3ee2a8/johni-broome-cbs-2.jpg",
+      "publishedAt": "2025-03-17T03:00:00Z",
+      "content": "The 2025 NCAA Tournament bracket undoubtedly has a chance to go down as one of the stronger fields in recent history. After 2024 featured bid-stealers galore, this iteration of conference tournament … [+5983 chars]"
+    },
+    {
+      "source": { "id": null, "name": "CNBC" },
+      "author": "Anniek Bao",
+      "title": "China’s retail sales strengthen at the start of the year, industrial data tops expectations - CNBC",
+      "description": "China's economic data for the first two months of the year showed a modest pickup as Beijing reiterated its plan to bolster domestic consumption.",
+      "url": "https://www.cnbc.com/2025/03/17/chinas-retail-sales-strengthen-at-the-start-of-the-year-meeting-expectations.html",
+      "urlToImage": "https://image.cnbcfm.com/api/v1/image/108072561-1733499231186-gettyimages-2188546666-5.jpeg?v=1742183796&w=1920&h=1080",
+      "publishedAt": "2025-03-17T02:04:00Z",
+      "content": "A woman, right, looks at herself on her phone as she and others buy warm winter hats at a vendors shop in the Panjiayuan Market on December 6, 2024 in Beijing, China. \r\nChina's economy showed a modes… [+4544 chars]"
+    },
+    {
+      "source": { "id": null, "name": "Deadline" },
+      "author": "Peter White",
+      "title": "Sam Rockwell Makes Surprise Visit To ‘The White Lotus’ As Incest Storyline Heats Up - Deadline",
+      "description": "SPOILER ALERT: This piece discusses plot points from the fifth episode of The White Lotus.  The White Lotus is in its full moon party era and “sh*t’s about to get crazy”, according to Patrick Schwarzenegger’s Saxon. The fifth episode of the HBO series’ third …",
+      "url": "http://deadline.com/2025/03/sam-rockwell-the-white-lotus-surprise-incest-storyline-1236325821/",
+      "urlToImage": "https://deadline.com/wp-content/uploads/2025/03/The-White-Lotus-and-Sam-Rockwell.jpg?w=1024",
+      "publishedAt": "2025-03-17T02:00:00Z",
+      "content": "SPOILER ALERT: This piece discusses plot points from the fifth episode of The White Lotus. \r\nThe White Lotus is in its full moon party era and “sh*t’s about to get crazy”, according to Patrick Schwar… [+3139 chars]"
+    },
+    {
+      "source": { "id": null, "name": "IndieWire" },
+      "author": "Proma Khosla",
+      "title": "In ‘The White Lotus’ Episode 5, Things Get Predictably Messy at the Full Moon Party - IndieWire",
+      "description": "A full moon party hits Mike White's HBO series, with major developments for multiple characters in 'The White Lotus' Season 3, Episode 5.",
+      "url": "https://www.indiewire.com/criticism/shows/the-white-lotus-season-3-episode-5-review-1235103593/",
+      "urlToImage": "https://www.indiewire.com/wp-content/uploads/2025/03/sam-nivola-patrick-schwarzenegger_8f41b9.jpg?w=650",
+      "publishedAt": "2025-03-17T02:00:00Z",
+      "content": "Editor’s Note: This article contains spoilers for “The White Lotus” Season 3, Episode 5, “Full Moon Party”.\r\nIn “The White Lotus” Season 3, Episode 5, Lochlan (Sam Nivola) poses an existential questi… [+5490 chars]"
+    },
+    {
+      "source": { "id": null, "name": "NBCSports.com" },
+      "author": "Ryan Lavner",
+      "title": "Varying vibes as J.J. Spaun and Rory McIlroy head to Monday Players playoff - NBC Sports",
+      "description": "J.J. Spaun and Rory McIlroy both played their way into a Monday playoff at The Players. That was good for one, not as much for the other.",
+      "url": "https://www.nbcsports.com/golf/news/varying-vibes-as-j-j-spaun-and-rory-mcilroy-head-to-monday-players-playoff",
+      "urlToImage": "https://nbcsports.brightspotcdn.com/dims4/default/2813a31/2147483647/strip/true/crop/5046x2838+0+526/resize/1440x810!/quality/90/?url=https%3A%2F%2Fnbc-sports-production-nbc-sports.s3.us-east-1.amazonaws.com%2Fbrightspot%2Fe1%2Fa3%2Ff2b7f8e643a68fd2ff06f025c5e5%2Fhttps-delivery-gettyimages.com%2Fdownloads%2F2205443864",
+      "publishedAt": "2025-03-17T01:10:30Z",
+      "content": "PONTE VEDRA BEACH, Fla. Well, obviously, this thing was over.\r\nIn a span of seven minutes Sunday at The Players Championship, J.J. Spaun went from one shot behind to three back after a bogey-birdie f… [+3974 chars]"
+    },
+    {
+      "source": { "id": null, "name": "BBC News" },
+      "author": null,
+      "title": "Peace deal must bar Ukraine from Nato, Russian official says - BBC.com",
+      "description": "Russia will seek guarantees that Ukraine will remain neutral in any deal, a deputy foreign minister says.",
+      "url": "https://www.bbc.com/news/articles/cq6yj0m1yl7o",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/1948/live/2ea846e0-02bd-11f0-9a66-47769ee0ccbd.jpg",
+      "publishedAt": "2025-03-17T00:33:14Z",
+      "content": "Russia will seek guarantees that Nato will exclude Ukraine from membership and that Ukraine will remain neutral in any peace deal, a Russian deputy foreign minister said.\r\n\"We will demand that ironcl… [+1852 chars]"
+    },
+    {
+      "source": { "id": null, "name": "Variety" },
+      "author": "Zack Sharf",
+      "title": "‘Snow White’ First Reactions Praise Film as a ‘Visual Feast’ and One of Disney’s ‘Best Live-Action Remakes in Years’ - Variety",
+      "description": "The first reactions are coming in for Disney's live-action \"Snow White\" remake, starring Rachel Zegler and Gal Gadot.",
+      "url": "https://variety.com/2025/film/news/snow-white-first-reactions-rachel-zegler-1236337493/",
+      "urlToImage": "https://variety.com/wp-content/uploads/2025/03/Snow-White-Disney-6.jpg?w=1000&h=563&crop=1",
+      "publishedAt": "2025-03-17T00:07:53Z",
+      "content": "Disney’s live-action “Snow White” remake has finally been unveiled at the movie’s Hollywood premiere, and first reactions are trickling in calling it a dazzling hit for the House of Mouse.\r\nVariety f… [+2898 chars]"
+    },
+    {
+      "source": { "id": "the-washington-post", "name": "The Washington Post" },
+      "author": "Anthony Faiola, Stefano Pitrelli",
+      "title": "Vatican shares first image of Pope Francis since hospitalization - The Washington Post",
+      "description": "The photo is said to have been taken Sunday, when Francis was co-celebrating Mass in the chapel of the hospital suite where he has been battling a health crisis.",
+      "url": "https://www.washingtonpost.com/world/2025/03/16/vatican-photo-pope-francis-hospital/",
+      "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/ZOU76SZOM4KZBGRMGC4O4BD24E.jpg&w=1440",
+      "publishedAt": "2025-03-16T23:52:06Z",
+      "content": "ROME In the photo, Pope Francis appears slightly slumped in his wheelchair, adorned in white robes and a purple stole before an altar at the Rome hospital where he has been a patient since Feb. 14. T… [+4995 chars]"
+    },
+    {
+      "source": { "id": null, "name": "BBC News" },
+      "author": null,
+      "title": "Trump dismantles Voice of America with executive order - BBC.com",
+      "description": "More than 1,300 staff placed on administrative leave as White House accuses VOA of being anti-Trump, \"radical\" and \"leftist\".",
+      "url": "https://www.bbc.com/news/articles/cvge4l109r3o",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/2ab1/live/77ae5820-0227-11f0-a266-535342915d40.png",
+      "publishedAt": "2025-03-16T23:28:03Z",
+      "content": "Thomas Mackintosh &amp; Merlyn Thomas\r\nUS President Donald Trump has signed an order to strip back federally funded news organisation Voice of America, accusing it of being \"anti-Trump\" and \"radical\"… [+3603 chars]"
+    },
+    {
+      "source": { "id": "the-hill", "name": "The Hill" },
+      "author": "Sarah Fortinsky",
+      "title": "Democratic Party’s favorability hits record low: Poll - The Hill",
+      "description": "The Democratic Party’s favorability rating has hit a record low, according to a CNN survey released Sunday. The survey, conducted March 6-9, shows 54 percent of surveyed U.S. adults say they have an unfavorable opinion of the Democratic Party, while 29 percen…",
+      "url": "https://thehill.com/homenews/campaign/5197910-democratic-partys-favorability-hits-record-low-poll/",
+      "urlToImage": "https://thehill.com/wp-content/uploads/sites/2/2025/01/DNC-chair_vakil_AssociatedPress.jpeg?w=1280",
+      "publishedAt": "2025-03-16T23:04:05Z",
+      "content": null
+    },
+    {
+      "source": { "id": "associated-press", "name": "Associated Press" },
+      "author": "Jamie Stengle",
+      "title": "Oklahomans survey devastation after hundreds of homes are destroyed and damaged by wildfires - The Associated Press",
+      "description": "Oklahomans are assessing the devastation after wildfires damaged or destroyed hundreds of homes around the state during a severe weather outbreak. Officials say at least two people were killed as a result of the wildfires and high winds that swept through Okl…",
+      "url": "https://apnews.com/article/oklahoma-texas-wildfires-58086d653ceb478fbc433f2b94a2e673",
+      "urlToImage": "https://dims.apnews.com/dims4/default/f931fb2/2147483647/strip/true/crop/2000x1125+0+104/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F3e%2F1a%2F1a794b0f2d141ac97a499bdfe682%2F041391f1a76e4ad5953056c1f6a84bf0",
+      "publishedAt": "2025-03-16T22:32:00Z",
+      "content": "DALLAS (AP) As Oklahomans assessed the devastation from wildfires that whipped across the state, damaging or destroying hundreds of homes, officials in both Oklahoma and Texas warned Sunday of an inc… [+3247 chars]"
+    },
+    {
+      "source": { "id": null, "name": "Page Six" },
+      "author": "Vanessa Serna",
+      "title": "Tom Cruise, 62, and Ana de Armas, 36, touch down in London together after helicopter ride - Page Six",
+      "description": "The duo appeared in good spirits as they arrived together at the London Heliport.",
+      "url": "https://pagesix.com/2025/03/16/celebrity-news/tom-cruise-and-ana-de-armas-touch-down-in-london-after-helicopter-ride/",
+      "urlToImage": "https://pagesix.com/wp-content/uploads/sites/3/2025/03/100597897.jpg?quality=75&strip=all&w=1024",
+      "publishedAt": "2025-03-16T22:22:00Z",
+      "content": "Tom Cruise and Ana de Armas were flying high for their second public outing this year.\r\nThe “Top Gun” star and the “Blonde” actress were photographed together after they arrived via helicopter at the… [+2161 chars]"
+    },
+    {
+      "source": { "id": "abc-news", "name": "ABC News" },
+      "author": "ABC News",
+      "title": "At least 59 killed in 'catastrophic' fire at illegal nightclub in North Macedonia: Officials - ABC News",
+      "description": null,
+      "url": "https://abcnews.go.com/International/dozens-believed-dead-north-macedonia-nightclub-fire/story?id\\\\u003d119846669",
+      "urlToImage": null,
+      "publishedAt": "2025-03-16T20:37:30Z",
+      "content": null
+    },
+    {
+      "source": { "id": "techcrunch", "name": "TechCrunch" },
+      "author": "Kyle Wiggers",
+      "title": "People are using Google’s new AI model to remove watermarks from images - TechCrunch",
+      "description": "People appear to be using Google's new Gemini model to remove watermarks from images, according to reports on social media.",
+      "url": "https://techcrunch.com/2025/03/16/people-are-using-googles-new-ai-model-to-remove-watermarks-from-images/",
+      "urlToImage": "https://techcrunch.com/wp-content/uploads/2025/02/GettyImages-2196352264.jpg?w=1024",
+      "publishedAt": "2025-03-16T20:34:15Z",
+      "content": "Users on social media have discovered a controversial use case for Google’s new Gemini AI model: removing watermarks from images, including from images published by Getty Images and other well-known … [+2077 chars]"
+    },
+    {
+      "source": { "id": "politico", "name": "Politico" },
+      "author": "Amanda Friedman",
+      "title": "Rubio defends detainment of Columbia activist, says more arrests will come - POLITICO",
+      "description": "“I don't know where we have gotten it in our head that a visa is some sort of birthright,” Rubio said.",
+      "url": "https://www.politico.com/news/2025/03/16/rubio-defends-detainment-columbia-activist-arrests-00232477",
+      "urlToImage": "https://static.politico.com/c0/67/661331cf4e67bf977b38d687a2e0/campus-protests-immigration-arrest-96853.jpg",
+      "publishedAt": "2025-03-16T20:18:21Z",
+      "content": "President Donald Trump touted Khalils detainment on social media last week as part of his effort to combat antisemitism on college campuses, saying the arrest was the first of many to come. However, … [+1613 chars]"
+    },
+    {
+      "source": { "id": "the-hill", "name": "The Hill" },
+      "author": "Lauren Irwin",
+      "title": "Witkoff says administration is ‘exploring’ alternatives for Gaza relocation - The Hill",
+      "description": "Trump administration special envoy Steve Witkoff said the administration is “exploring” alternatives for relocation of the Palestinian people after President Trump said he would potentially take over Gaza to rebuild after its war with Israel. Host Margaret Br…",
+      "url": "https://thehill.com/policy/international/5197683-witkoff-says-administration-is-exploring-alternatives-for-gaza-relocation/",
+      "urlToImage": "https://thehill.com/wp-content/uploads/sites/2/2025/02/witkoffsteve_022425gn01_w.jpg?w=1280",
+      "publishedAt": "2025-03-16T20:14:00Z",
+      "content": "Skip to content\r\nTrump administration special envoy Steve Witkoff said the administration is “exploring” alternatives for relocation of the Palestinian people after President Trump said he would pote… [+1564 chars]"
+    }
+  ]
+  constructor () {
+    super();
+    this.state= {
+      articles: this.articles,
+      loading: false
+    }
+  }
   render() {
     return (
       <div className="container my-3">
         <h2>PixelCurrent Top Headlines</h2>
         <div className="row">
-          <div className="col-md-4">
-            <NewsItem title="my title" description="my description" />
-          </div>
-          <div className="col-md-4">
-            <NewsItem title="my title" description="my description" />
-          </div>
-          <div className="col-md-4">
-            <NewsItem title="my title" description="my description" />
-          </div>
+          {this.state.articles.map((element) => {
+            return  <div className="col-md-4" key={element.url}>
+                <NewsItem title={element.title} description={element.description} imageUrl={element.urlToImage} newsUrl={element.newsUrl}/>
+              </div>
+          })}
         </div>
       </div>
     )
