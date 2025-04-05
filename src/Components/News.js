@@ -134,16 +134,6 @@ export class News extends Component {
       "content": "Tom Cruise and Ana de Armas were flying high for their second public outing this year.\r\nThe “Top Gun” star and the “Blonde” actress were photographed together after they arrived via helicopter at the… [+2161 chars]"
     },
     {
-      "source": { "id": "abc-news", "name": "ABC News" },
-      "author": "ABC News",
-      "title": "At least 59 killed in 'catastrophic' fire at illegal nightclub in North Macedonia: Officials - ABC News",
-      "description": null,
-      "url": "https://abcnews.go.com/International/dozens-believed-dead-north-macedonia-nightclub-fire/story?id\\\\u003d119846669",
-      "urlToImage": null,
-      "publishedAt": "2025-03-16T20:37:30Z",
-      "content": null
-    },
-    {
       "source": { "id": "techcrunch", "name": "TechCrunch" },
       "author": "Kyle Wiggers",
       "title": "People are using Google’s new AI model to remove watermarks from images - TechCrunch",
@@ -188,7 +178,7 @@ export class News extends Component {
         <div className="row">
           {this.state.articles.map((element) => {
             return  <div className="col-md-4" key={element.url}>
-                <NewsItem title={element.title} description={element.description} imageUrl={element.urlToImage} newsUrl={element.newsUrl}/>
+                <NewsItem title={ element.title.length>=45 ? element.title.slice(0, 45) + "..." : element.title} description={ element.description.length>=88 ? element.description.slice(0, 88) + "..." : element.description} imageUrl={element.urlToImage} newsUrl={element.url}/>
               </div>
           })}
         </div>
