@@ -10,7 +10,7 @@ export class News extends Component {
     }
   }
   async componentDidMount() {
-    let url="https://newsapi.org/v2/everything?q=tesla&from=2025-03-05&sortBy=publishedAt&apiKey=2f12bb8d5ffe4ff181d52c2f2bf509e4";
+    let url="https://newsapi.org/v2/everything?q=tesla&from=2025-03-11&sortBy=publishedAt&apiKey=2f12bb8d5ffe4ff181d52c2f2bf509e4";
     let data=await fetch(url);
     let parsedData=await data.json()
     if(parsedData.articles) {
